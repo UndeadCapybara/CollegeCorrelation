@@ -49,11 +49,16 @@ for i in range(len(ycopy)):
 for i in range(len(zcopy)):
   zcopy[i] = zcopy[i] - zavg
 
-dotproduct = 0
+dotproductxz = 0
 for i in range (len(xcopy)):
-  dotproduct += xcopy[i] * zcopy[i]
+  dotproductxz += xcopy[i] * zcopy[i]
+
+dotproductyz = 0
+for i in range(len(ycopy)):
+  dotproductyz += ycopy[i] * zcopy[i]
 
 xmag = 0
+ymag=0
 zmag = 0
 for i in range(len(xcopy)):
   xmag += xcopy[i] * xcopy[i]
@@ -62,5 +67,5 @@ for i in range(len(xcopy)):
 xmag = math.sqrt(xmag)
 zmag = math.sqrt(zmag)
 
-correlationCo = dotproduct / (xmag * zmag)
+correlationCo = dotproductxz / (xmag * zmag)
 print(correlationCo)
