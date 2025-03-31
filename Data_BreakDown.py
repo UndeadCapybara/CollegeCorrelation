@@ -62,6 +62,7 @@ ymag=0
 zmag = 0
 for i in range(len(xcopy)):
   xmag += xcopy[i] * xcopy[i]
+  ymag += ycopy[i] * ycopy[i] 
   zmag += zcopy[i] * zcopy[i]
 
 xmag = math.sqrt(xmag)
