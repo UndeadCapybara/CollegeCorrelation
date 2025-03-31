@@ -41,7 +41,7 @@ for i in zcopy:
   zsum+=i
 zavg = zsum/zquant
 
-#subtracting mean
+#subtracting mean from each values in the vectors
 for i in range(len(xcopy)):
   xcopy[i] = xcopy[i] - xavg
 for i in range(len(ycopy)):
@@ -49,14 +49,17 @@ for i in range(len(ycopy)):
 for i in range(len(zcopy)):
   zcopy[i] = zcopy[i] - zavg
 
+#dot product of x and z vector
 dotproductxz = 0
 for i in range (len(xcopy)):
   dotproductxz += xcopy[i] * zcopy[i]
 
+#dot product of y and z vectors
 dotproductyz = 0
 for i in range(len(ycopy)):
   dotproductyz += ycopy[i] * zcopy[i]
 
+#finds the magnitudes of each vector
 xmag = 0
 ymag=0
 zmag = 0
@@ -66,7 +69,12 @@ for i in range(len(xcopy)):
   zmag += zcopy[i] * zcopy[i]
 
 xmag = math.sqrt(xmag)
+ymag = math.sqrt(ymag)
 zmag = math.sqrt(zmag)
 
-correlationCo = dotproductxz / (xmag * zmag)
-print(correlationCo)
+#correlation coefficients
+correlationCoxz = dotproductxz / (xmag * zmag)
+correlationCoyz = dotproductyz / (ymag * zmag)
+
+print(correlationCoxz)
+print(correlationCoyz)
