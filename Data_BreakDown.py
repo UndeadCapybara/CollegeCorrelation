@@ -11,6 +11,7 @@ data = f.readlines()
 f.close()
 
 for i in range(len(data)):
+  datapoint = data[i].split(',')
   xdata.append(float(datapoint[0]))
   ydata.append(float(datapoint[1]))
   zdata.append(float(datapoint[2]))
